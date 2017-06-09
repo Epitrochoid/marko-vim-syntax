@@ -25,7 +25,13 @@ syntax region htmlComment start=/<\!--/ end=/-->/
 syntax region blockComment start=/\v\/\*/ end=/\v\*\//
 syntax region singleQuoteString start=/\v'/ skip=/\v\\\'/ end=/\v'/
 syntax region doubleQuoteString start=/\v"/ skip=/\v\\\"/ end=/\v"/
-syntax region jsTemplate start=/${/ end=/}/
+
+" embedded syntax regions
+let b:current_syntax = ''
+unlet b:current_syntax
+syntax include @JS syntax/javascript.vim
+
+syntax region jsTemplate matchgroup=jsDeliminators start=/${/ end=/}/ contains=@JS
 
 " link keywords
 highlight link markup StorageClass
@@ -42,6 +48,7 @@ highlight link htmlComment Comment
 highlight link blockComment Comment
 highlight link singleQuoteString String
 highlight link doubleQuoteString String
-highlight link jsTemplate PreProc
+highlight link jsDeliminators PreProc
+
 
 let b:current_syntax = "marko"
