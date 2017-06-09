@@ -15,6 +15,10 @@ syntax keyword storage const let var
 
 " matches
 syntax match singleLineComment /\v\/\/.*$/
+" Note: \ze is used to specify where to end the match
+" after the evaluating the full regex
+" (used to avoid the lookbehind syntax)
+syntax match onEvent /\von\S+\ze\(/
 
 " regions
 syntax region htmlComment start=/<\!--/ end=/-->/
@@ -30,6 +34,7 @@ highlight link storage StorageClass
 
 " link matches
 highlight link singleLineComment Comment
+highlight link onEvent Type
 
 " link regions
 highlight link htmlComment Comment
