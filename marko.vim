@@ -18,7 +18,7 @@ syntax match singleLineComment /\v\/\/.*$/
 " Note: \ze is used to specify where to end the match
 " after the evaluating the full regex
 " (used to avoid the lookbehind syntax)
-syntax match onEvent /\von\S+\ze\(/
+syntax match onEvent /\v\Won\S+\ze\(/
 
 " regions
 syntax region htmlComment start=/<\!--/ end=/-->/
