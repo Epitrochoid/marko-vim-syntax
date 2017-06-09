@@ -18,7 +18,7 @@ syntax match singleLineComment /\v\/\/.*$/
 " Note: \ze is used to specify where to end the match
 " after the evaluating the full regex
 " (used to avoid the lookbehind syntax)
-syntax match onEvent /\v\Won\S+\ze\(/
+syntax match onEvent /\v\s+on\S+\ze\(/
 syntax match text /\v--/
 
 " regions
@@ -33,6 +33,7 @@ unlet b:current_syntax
 syntax include @JS syntax/javascript.vim
 
 syntax region jsTemplate matchgroup=jsDeliminators start=/${/ end=/}/ contains=@JS
+syntax region staticJsRegion start=/^\s*static\s*{\zs/ end=/\ze}/ contains=@JS
 
 " link keywords
 highlight link markup StorageClass
