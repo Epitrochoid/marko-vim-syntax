@@ -19,6 +19,7 @@ syntax match singleLineComment /\v\/\/.*$/
 " after the evaluating the full regex
 " (used to avoid the lookbehind syntax)
 syntax match onEvent /\v\Won\S+\ze\(/
+syntax match text /\v--/
 
 " regions
 syntax region htmlComment start=/<\!--/ end=/-->/
@@ -42,6 +43,7 @@ highlight link storage StorageClass
 " link matches
 highlight link singleLineComment Comment
 highlight link onEvent Type
+highlight link text Special
 
 " link regions
 highlight link htmlComment Comment
