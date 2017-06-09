@@ -25,6 +25,7 @@ syntax region htmlComment start=/<\!--/ end=/-->/
 syntax region blockComment start=/\v\/\*/ end=/\v\*\//
 syntax region singleQuoteString start=/\v'/ skip=/\v\\\'/ end=/\v'/
 syntax region doubleQuoteString start=/\v"/ skip=/\v\\\"/ end=/\v"/
+syntax region jsTemplate start=/${/ end=/}/
 
 " link keywords
 highlight link markup StorageClass
@@ -41,5 +42,6 @@ highlight link htmlComment Comment
 highlight link blockComment Comment
 highlight link singleQuoteString String
 highlight link doubleQuoteString String
+highlight link jsTemplate PreProc
 
 let b:current_syntax = "marko"
