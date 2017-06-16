@@ -1,9 +1,21 @@
 " Vim syntax file
 " Language: Concise Marko
+" Credits: vim-javascript-project codebase was huge help in figuring this out
 
+if !exists("main_syntax")
+	if version < 600
+		syntax clear
+	elseif exists("b:current_syntax")
+		finish
+	endif
+	let main_syntax = 'marko'
+endif
 if exists("b:current_syntax")
   finish
 endif
+
+" slow but accurate?
+syntax sync fromstart
 
 " keywords
 " Note: consider creating regex for first word on line
